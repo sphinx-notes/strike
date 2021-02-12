@@ -7,7 +7,7 @@ import strike as proj
 
 from setuptools import setup, find_namespace_packages
 
-with open('doc/index.rst') as f:
+with open('README.rst', 'r') as f:
     long_desc = f.read()
 
 setup(
@@ -19,6 +19,7 @@ setup(
     author=proj.__author__,
     description=proj.__description__,
     long_description=long_desc,
+    long_description_content_type='text/x-rst',
     zip_safe=False,
     classifiers=[
         'Development Status :: 3 - Alpha',

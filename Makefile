@@ -13,6 +13,7 @@ doc:
 dist: setup.py
 	$(RM) dist/ build/ *.egg-info/
 	$(PY) setup.py sdist bdist_wheel
+	$(PY) -m twine check dist/*
 
 .PHONY: upload
 upload: dist/
