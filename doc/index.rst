@@ -13,10 +13,6 @@ Sphinx extension for HTML strikethrough text support
 :copyright: Copyright ©2021 by Shengyu Zhang.
 :license: BSD, see LICENSE for details.
 
-The extension provides a domain named "any", allows user creates directive
-and roles to descibe and reference arbitrary object by writing restructedText
-template.
-
 .. contents::
    :local:
    :backlinks: none
