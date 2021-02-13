@@ -54,6 +54,13 @@ Role ``del`` also works:
 Change Log
 ==========
 
+2021-02-11 1.0
+--------------
+
+.. sectionauthor:: Shengyu Zhang
+
+Release 1.0 stable.
+
 2021-02-12 1.0a0
 ----------------
 
