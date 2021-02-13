@@ -45,11 +45,11 @@ Use role ``strike`` to add text with a strikethrough:
 ``:strike:`Sphinx``` :strike:`Sphinx`
 ==================== ================
 
-Role ``s`` is shortcut of ``strike``:
+Role ``del`` also works:
 
-=============== ==========
-``:s:`Sphinx``` :s:`Sphinx`
-=============== ==========
+================= =============
+``:del:`Sphinx``` :del:`Sphinx`
+================= =============
 
 Change Log
 ==========

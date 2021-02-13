@@ -60,7 +60,7 @@ def setup(app:Sphinx):
     app.add_node(strike_node,
                  html=(html_visit_strike_node, html_depart_strike_node))
     app.add_role('strike', strike_role)
-    app.add_role('s', strike_role)
+    app.add_role('del', strike_role)
 
     # Add static path and include css file
     app.connect("config-inited", on_config_inited)
