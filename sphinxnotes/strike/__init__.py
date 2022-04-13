@@ -50,6 +50,14 @@ def html_depart_strike_node(self, node:strike_node) -> None:
     self.body.append('</span>')
 
 
+def latext_visit_strike_node(self, node:strike_node) -> None:
+    self.body.append(r'\sout{')
+
+
+def latext_depart_strike_node(self, node:strike_node) -> None:
+    self.body.append('}')
+
+
 def on_config_inited(app:Sphinx, cfg:Config) -> None:
     static_path = path.abspath(path.join(path.dirname(__file__), '_static'))
     cfg.html_static_path.append(static_path)
@@ -57,8 +65,12 @@ def on_config_inited(app:Sphinx, cfg:Config) -> None:
 
 
 def setup(app:Sphinx):
+    app.add_latex_package('ulem', 'normalem')
+
     app.add_node(strike_node,
-                 html=(html_visit_strike_node, html_depart_strike_node))
+                 html=(html_visit_strike_node, html_depart_strike_node),
+                 latex=(latext_visit_strike_node, latext_depart_strike_node))
+
     app.add_role('strike', strike_role)
     app.add_role('del', strike_role)
 
