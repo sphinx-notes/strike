@@ -7,7 +7,7 @@ Sphinx extension for HTML strikethrough text support
 ----------------------------------------------------
 
 .. image:: https://img.shields.io/github/stars/sphinx-notes/strike.svg?style=social&label=Star&maxAge=2592000
-   :target: https://github.com/sphinx-notes/strike
+  :target: https://github.com/sphinx-notes/strike
 
 :version: |version|
 :copyright: Copyright ©2021 by Shengyu Zhang.
