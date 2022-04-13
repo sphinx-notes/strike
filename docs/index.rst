@@ -2,15 +2,15 @@
 sphinxnotes-strike
 ==================
 
-----------------------------------------------------
-Sphinx extension for HTML strikethrough text support
-----------------------------------------------------
+-----------------------------------------------
+Sphinx extension for strikethrough text support
+-----------------------------------------------
 
 .. image:: https://img.shields.io/github/stars/sphinx-notes/strike.svg?style=social&label=Star&maxAge=2592000
   :target: https://github.com/sphinx-notes/strike
 
 :version: |version|
-:copyright: Copyright ©2021 by Shengyu Zhang.
+:copyright: Copyright ©2022 by Shengyu Zhang.
 :license: BSD, see LICENSE for details.
 
 .. contents::
@@ -54,16 +54,17 @@ Role ``del`` also works:
 Change Log
 ==========
 
-2021-02-11 1.0
+2022-04-13 1.1
 --------------
 
-.. sectionauthor:: Shengyu Zhang
+- Add support for LaTeX builder (#1)
+
+2021-02-11 1.0
+--------------
 
 Release 1.0 stable.
 
 2021-02-12 1.0a0
 ----------------
-
-.. sectionauthor:: Shengyu Zhang
 
 The alpha version is out, enjoy~
