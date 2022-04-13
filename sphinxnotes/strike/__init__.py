@@ -23,9 +23,9 @@ if TYPE_CHECKING:
 __title__ = 'sphinxnotes-strike'
 __package__ = 'strike'
 __author__ = 'Shengyu Zhang'
-__description__ = 'Sphinx extension for HTML strikethrough text support'
+__description__ = 'Sphinx extension for strikethrough text support'
 __license__ = 'BSD'
-__version__ = '1.0'
+__version__ = '1.1'
 __url__ = 'https://sphinx-notes.github.io/strike'
 __keywords__ = 'documentation, sphinx, extension'
 
