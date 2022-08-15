@@ -11,7 +11,8 @@ from __future__ import annotations
 from os import path
 from typing import List, Dict, Tuple
 
-from docutils import nodes, utils
+from docutils import nodes
+from docutils.utils import nodes, unescape
 from docutils.nodes import Node, system_message, Text
 from docutils.parsers.rst.states import Inliner
 
@@ -40,11 +41,10 @@ def strike_role(typ:str, rawtext:str, text:str, lineno:int,
 
     if not isinstance(env.app.builder, (StandaloneHTMLBuilder, LaTeXBuilder)):
         # Builder is not supported, fallback to text.
-        return [Text(utils.unescape(text))], []
+        return [Text(unescape(text))], []
 
-    node = strike_node(text=utils.unescape(text))
+    node = strike_node(rawtext, unescape(text))
     node['docname'] = env.docname
-    node['rawtext'] = rawtext
     return [node], []
 
 
