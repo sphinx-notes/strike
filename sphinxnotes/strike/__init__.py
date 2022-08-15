@@ -9,16 +9,16 @@
 
 from __future__ import annotations
 from os import path
-from typing import TYPE_CHECKING, List, Dict, Tuple
+from typing import List, Dict, Tuple
 
 from docutils import nodes, utils
-if TYPE_CHECKING:
-    from docutils.nodes import Node, system_message
-    from docutils.parsers.rst.states import Inliner
+from docutils.nodes import Node, system_message, Text
+from docutils.parsers.rst.states import Inliner
 
-if TYPE_CHECKING:
-    from sphinx.application import Sphinx
-    from sphinx.config import Config
+from sphinx.application import Sphinx
+from sphinx.config import Config
+from sphinx.builders.html import StandaloneHTMLBuilder
+from sphinx.builders.latex import LaTeXBuilder
 
 __title__ = 'sphinxnotes-strike'
 __package__ = 'strike'
@@ -26,7 +26,7 @@ __author__ = 'Shengyu Zhang'
 __description__ = 'Sphinx extension for strikethrough text support'
 __license__ = 'BSD'
 __version__ = '1.1'
-__url__ = 'https://sphinx-notes.github.io/strike'
+__url__ = 'https://sphinx.silverrainz.me/strike'
 __keywords__ = 'documentation, sphinx, extension'
 
 
@@ -36,8 +36,14 @@ class strike_node(nodes.Inline, nodes.TextElement): pass
 def strike_role(typ:str, rawtext:str, text:str, lineno:int,
              inliner:Inliner, options:Dict={}, content:List[str]=[]
              ) -> Tuple[List[Node],List[system_message]]:
+    env = inliner.document.settings.env # type: ignore
+
+    if not isinstance(env.app.builder, (StandaloneHTMLBuilder, LaTeXBuilder)):
+        # Builder is not supported, fallback to text.
+        return [Text(utils.unescape(text))], []
+
     node = strike_node(text=utils.unescape(text))
-    node['docname'] = inliner.document.settings.env.docname
+    node['docname'] = env.docname
     node['rawtext'] = rawtext
     return [node], []
 
