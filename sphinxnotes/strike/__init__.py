@@ -49,7 +49,9 @@ def strike_role(typ:str, rawtext:str, text:str, lineno:int,
 
 
 def html_visit_strike_node(self, node:strike_node) -> None:
-    self.body.append(self.starttag(node, 'span', '', CLASS='sphinxnotes-strike'))
+    self.body.append(self.starttag(node, 'span', '',
+                                   CLASS='sphinxnotes-strike',
+                                   STYLE='text-decoration: line-through;'))
 
 
 def html_depart_strike_node(self, node:strike_node) -> None:
@@ -64,12 +66,6 @@ def latext_depart_strike_node(self, node:strike_node) -> None:
     self.body.append('}')
 
 
-def on_config_inited(app:Sphinx, cfg:Config) -> None:
-    static_path = path.abspath(path.join(path.dirname(__file__), '_static'))
-    cfg.html_static_path.append(static_path)
-    app.add_css_file('sphinxnotes-strike.css')
-
-
 def setup(app:Sphinx):
     app.add_latex_package('ulem', 'normalem')
 
@@ -79,9 +75,6 @@ def setup(app:Sphinx):
 
     app.add_role('strike', strike_role)
     app.add_role('del', strike_role)
-
-    # Add static path and include css file
-    app.connect("config-inited", on_config_inited)
 
     return {
         "version": __version__,
