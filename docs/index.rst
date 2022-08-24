@@ -2,16 +2,14 @@
 sphinxnotes-strike
 ==================
 
------------------------------------------------
-Sphinx extension for strikethrough text support
------------------------------------------------
-
 .. image:: https://img.shields.io/github/stars/sphinx-notes/strike.svg?style=social&label=Star&maxAge=2592000
   :target: https://github.com/sphinx-notes/strike
 
 :version: |version|
 :copyright: Copyright ©2022 by Shengyu Zhang.
 :license: BSD, see LICENSE for details.
+
+Sphinx extension for :del:`strikethrough text support`.
 
 .. contents::
    :local:
@@ -53,6 +51,12 @@ Role ``del`` also works:
 
 Change Log
 ==========
+
+2022-08-25 1.2
+--------------
+
+- Fallback to text for unsupported builder
+- Use inline HTML stylesheet
 
 2022-04-13 1.1
 --------------
