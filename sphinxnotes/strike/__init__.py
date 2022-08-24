@@ -26,7 +26,7 @@ __package__ = 'strike'
 __author__ = 'Shengyu Zhang'
 __description__ = 'Sphinx extension for strikethrough text support'
 __license__ = 'BSD'
-__version__ = '1.1'
+__version__ = '1.2'
 __url__ = 'https://sphinx.silverrainz.me/strike'
 __keywords__ = 'documentation, sphinx, extension'
 
