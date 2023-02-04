@@ -1,28 +1,31 @@
-LANG=en_US.UTF-8
+# This file is generated from sphinx-notes/template. DO NOT EDIT.
+
+LANG = en_US.UTF-8
 
 MAKE = make
 PY   = python3
 RM   = rm -rf
 
-.PHONY: docs
+.PHONY: docs test dist install upload test-upload sync-template
+
 docs:
-	$(RM) docs/_build
 	$(MAKE) -C docs/
 
-.PHONY: dist
-dist: setup.py
-	$(RM) dist/ build/ *.egg-info/
-	$(PY) setup.py sdist bdist_wheel
-	$(PY) -m twine check dist/*
+test:
+	$(PY) -m unittest discover -s tests -v
 
-.PHONY: upload
-upload: dist/
-	$(PY) -m twine upload --repository pypi $<*
+dist: pyproject.toml
+	$(RM) dist/ # clean up old dist
+	$(PY) -m build
 
-.PHONY: install
 install: dist
 	$(PY) -m pip install --user --no-deps --force-reinstall dist/*.whl
 
-.PHONY: test
-test:
-	$(PY) -m unittest -v
+upload: dist
+	$(PY) -m twine upload --repository pypi $</*
+
+test-upload: dist
+	$(PY) -m twine upload --repository testpypi $</*
+
+sync-template:
+	./.sphinxnotes/template/update.py
