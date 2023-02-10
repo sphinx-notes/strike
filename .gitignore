@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Poetry
+poetry.lock
+
 # Sphinx
-_build
+docs/_build/
