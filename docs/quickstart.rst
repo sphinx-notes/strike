@@ -21,7 +21,7 @@ Then, add the extension name to ``extensions`` configuration item in your conf.p
 
    extensions = [
              # …
-             'sphinxnotes-strike',
+             'sphinxnotes.strike',
              # …
              ]
 
