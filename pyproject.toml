@@ -34,7 +34,7 @@ dependencies = [
 dynamic = ["version"] # required by setuptools_scm, see section [build-system]
 
 [project.optional-dependencies]
-docs = ["furo"]
+docs = ["furo", "sphinxnotes-any", "sphinx_design"]
 test = ["pytest"]
 dev = ["build", "twine", "cruft"]
 

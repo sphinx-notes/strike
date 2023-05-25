@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/sphinx-notes/template",
-  "commit": "c26a404fb3317495ed58253c2f1fcd29449e5b87",
+  "commit": "51cc6fb9ab3482f62c6baf78621605385fa9609b",
   "checkout": "incr",
   "context": {
     "cookiecutter": {

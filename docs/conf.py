@@ -79,7 +79,7 @@ any_schemas = [
     #
     Schema('version',
            name=F(unique=True, referenceable=True, required=True, form=F.Form.LINES),
-           attrs={'date': F()},
+           attrs={'date': F(referenceable=True)},
            content=F(form=F.Form.LINES),
            description_template=open('_templates/version.rst', 'r').read(),
            reference_template='💽{{ title }}',
@@ -87,7 +87,9 @@ any_schemas = [
            ambiguous_reference_template='💽{{ title }}'),
     #
 ]
+primary_domain = 'any'
 
+extensions.append("sphinx_design")
 
 # -- Eat your own dog food --------------------------------------------------
 
