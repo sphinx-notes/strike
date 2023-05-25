@@ -26,7 +26,8 @@ version = release = '1.2-4-g8eb3dc8'
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
-    'strike',
+    'sphinx_design',
+    'sphinx_copybutton',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -89,8 +90,6 @@ any_schemas = [
 ]
 primary_domain = 'any'
 
-extensions.append("sphinx_design")
-
 extensions.append('sphinx.ext.extlinks')
 extlinks = {
     'issue': ('https://github.com/sphinx-notes/strike/issues/%s', '💬 %s'),
@@ -104,6 +103,7 @@ extlinks = {
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('../src/sphinxnotes'))
+extensions.append('strike')
 
 # DOG FOOD CONFIGURATION START
 

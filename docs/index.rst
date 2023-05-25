@@ -61,8 +61,6 @@ Contents
 .. toctree::
    :caption: Contents
 
-   install
-   
    changelog
 
 The Sphinx Notes Project
