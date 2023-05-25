@@ -1,4 +1,5 @@
-.. This file is generated from sphinx-notes/template. DO NOT EDIT.
+.. This file is generated from sphinx-notes/template.
+   You need to consider modifying the TEMPLATE or modifying THIS FILE.
 
 ==================
 sphinxnotes-strike
@@ -20,7 +21,7 @@ sphinxnotes-strike
    :target: https://pypi.python.org/pypi/sphinxnotes-strike
    :alt: PyPI Package Downloads
 
-Sphinx extension for strikethrough text support.
+An extension that adds strikethrough text support to Sphinx.
 
 * Documentation: https://sphinx.silverrainz.me/strike
 * Source: https://github.com/sphinx-notes/strike

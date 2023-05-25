@@ -1,5 +1,6 @@
-# This file is generated from sphinx-notes/template. DO NOT EDIT.
-#
+# This file is generated from sphinx-notes/template.
+# You need to consider modifying the TEMPLATE or modifying THIS FILE.
+
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -20,17 +21,13 @@ version = release = '1.2-4-g8eb3dc8'
 
 # -- General configuration ---------------------------------------------------
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('../src/sphinxnotes'))
-
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
-    'strike',
+    'sphinx_design',
+    'sphinx_copybutton',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -74,3 +71,40 @@ html_theme_options = {
 html_baseurl = 'https://sphinx.silverrainz.me/strike'
 
 html_logo = html_favicon = '_images/sphinx-notes.png'
+
+# -- Extensions -------------------------------------------------------------
+
+extensions.append('sphinxnotes.any')
+from sphinxnotes.any import Schema, Field as F
+any_schemas = [
+    #
+    Schema('version',
+           name=F(unique=True, referenceable=True, required=True, form=F.Form.LINES),
+           attrs={'date': F(referenceable=True)},
+           content=F(form=F.Form.LINES),
+           description_template=open('_templates/version.rst', 'r').read(),
+           reference_template='💽 {{ title }}',
+           missing_reference_template='💽 {{ title }}',
+           ambiguous_reference_template='💽 {{ title }}'),
+    #
+]
+primary_domain = 'any'
+
+extensions.append('sphinx.ext.extlinks')
+extlinks = {
+    'issue': ('https://github.com/sphinx-notes/strike/issues/%s', '💬 %s'),
+    'pull': ('https://github.com/sphinx-notes/strike/pull/%s', '🚀 %s'),
+    'tag': ('https://github.com/sphinx-notes/strike/releases/tag/%s', '🏷️ %s'),
+}
+
+# -- Eat your own dog food --------------------------------------------------
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+sys.path.insert(0, os.path.abspath('../src/sphinxnotes'))
+extensions.append('strike')
+
+# DOG FOOD CONFIGURATION START
+
+# DOG FOOD CONFIGURATION END
