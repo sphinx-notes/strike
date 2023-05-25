@@ -82,14 +82,21 @@ any_schemas = [
            attrs={'date': F(referenceable=True)},
            content=F(form=F.Form.LINES),
            description_template=open('_templates/version.rst', 'r').read(),
-           reference_template='💽{{ title }}',
-           missing_reference_template='💽{{ title }}',
-           ambiguous_reference_template='💽{{ title }}'),
+           reference_template='💽 {{ title }}',
+           missing_reference_template='💽 {{ title }}',
+           ambiguous_reference_template='💽 {{ title }}'),
     #
 ]
 primary_domain = 'any'
 
 extensions.append("sphinx_design")
+
+extensions.append('sphinx.ext.extlinks')
+extlinks = {
+    'issue': ('https://github.com/sphinx-notes/strike/issues/%s', '💬 %s'),
+    'pull': ('https://github.com/sphinx-notes/strike/pull/%s', '🚀 %s'),
+    'tag': ('https://github.com/sphinx-notes/strike/releases/tag/%s', '🏷️ %s'),
+}
 
 # -- Eat your own dog food --------------------------------------------------
 
