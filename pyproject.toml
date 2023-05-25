@@ -1,5 +1,6 @@
-# This file is generated from sphinx-notes/template. DO NOT EDIT.
-#
+# This file is generated from sphinx-notes/template.
+# You need to consider modifying the TEMPLATE or modifying THIS FILE.
+
 # This file is used to configure your project.
 # Read more about the various options under:
 # https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata
@@ -35,7 +36,7 @@ dynamic = ["version"] # required by setuptools_scm, see section [build-system]
 [project.optional-dependencies]
 docs = ["furo"]
 test = ["pytest"]
-dev = ["build", "twine"]
+dev = ["build", "twine", "cruft"]
 
 [project.urls]
 homepage = "https://sphinx.silverrainz.me/strike"
