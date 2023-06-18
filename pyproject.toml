@@ -34,9 +34,21 @@ dependencies = [
 dynamic = ["version"] # required by setuptools_scm, see section [build-system]
 
 [project.optional-dependencies]
-docs = ["furo", "sphinxnotes-any", "sphinx_design", "sphinx_copybutton"]
-test = ["pytest"]
-dev = ["build", "twine", "cruft"]
+dev = [
+    "build",
+    "twine",
+    "cruft",
+]
+test = [
+    "pytest",
+]
+docs = [
+    "furo",
+    "sphinxnotes-any",
+    "sphinx_design",
+    "sphinx_copybutton",
+    "sphinxcontrib-gtagjs",
+]
 
 [project.urls]
 homepage = "https://sphinx.silverrainz.me/strike"
