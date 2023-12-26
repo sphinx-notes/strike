@@ -1,4 +1,4 @@
-.. This file is generated from sphinx-notes/template.
+.. This file is generated from sphinx-notes/cookiecutter.
    You need to consider modifying the TEMPLATE or modifying THIS FILE.
 
 ==================
@@ -17,7 +17,7 @@ sphinxnotes-strike
    :target: https://pypi.python.org/pypi/sphinxnotes-strike
    :alt: PyPI Package
 
-.. image:: https://img.shields.io/pypi/dw/sphinxnotes-strike
+.. image:: https://img.shields.io/pypi/dm/sphinxnotes-strike
    :target: https://pypi.python.org/pypi/sphinxnotes-strike
    :alt: PyPI Package Downloads
 

@@ -1,4 +1,4 @@
-# This file is generated from sphinx-notes/template.
+# This file is generated from sphinx-notes/cookiecutter.
 # You need to consider modifying the TEMPLATE or modifying THIS FILE.
 
 LANG = en_US.UTF-8
@@ -46,7 +46,7 @@ upload-test: dist
 	$(PY) -m twine upload --repository testpypi $</*
 
 # Keep up to date with the latest template.
-# See also https://github.com/sphinx-notes/template.
+# See also https://github.com/sphinx-notes/cookiecutter.
 .PHONY: update-template
 update-template:
 	$(PY) -m cruft update

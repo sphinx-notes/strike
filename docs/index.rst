@@ -1,4 +1,4 @@
-.. This file is generated from sphinx-notes/template.
+.. This file is generated from sphinx-notes/cookiecutter.
    You need to consider modifying the TEMPLATE or modifying THIS FILE.
 
 .. include:: ../README.rst
@@ -66,7 +66,7 @@ Contents
 The Sphinx Notes Project
 ========================
 
-This project is a developed by `Shengyu Zhang`__,
+The project is developed by `Shengyu Zhang`__,
 as part of **The Sphinx Notes Project**.
 
 .. toctree::

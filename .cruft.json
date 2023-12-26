@@ -1,6 +1,6 @@
 {
-  "template": "https://github.com/sphinx-notes/template",
-  "commit": "93c85ed7fe6dc87e11ffd024b762a3c8c9a83a1b",
+  "template": "https://github.com/sphinx-notes/cookiecutter",
+  "commit": "0b7d8aa478b37114cef369a217bd1d463e369d37",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -14,7 +14,7 @@
       "github_repo": "strike",
       "pypi_name": "sphinxnotes-strike",
       "pypi_owner": "SilverRainZ",
-      "_template": "https://github.com/sphinx-notes/template"
+      "_template": "https://github.com/sphinx-notes/cookiecutter"
     }
   },
   "directory": null
