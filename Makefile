@@ -29,7 +29,7 @@ dist: pyproject.toml
 .PHONY: install
 install: dist
 	export PIP_BREAK_SYSTEM_PACKAGES=1 # required by Python 3.11+, see PEP-668
-	$(PY) -m pip install --user --no-deps --force-reinstall dist/*.whl
+	$(PY) -m pip install --no-deps --force-reinstall dist/*.whl
 
 # Publish wheel to PyPI offical server <https://pypi.org/> when you want to
 # You should have a PyPI account and have PyPI token configured.

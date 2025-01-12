@@ -12,8 +12,16 @@ Change Log
 
    .. version:: _
       :date: yyyy-mm-dd
+     Change log here.
 
-      Change log here.
+1.3
+---
+
+.. version:: _
+   :date: 2025-01-12
+
+   - Sphinx >= 8.1.3
+
 
 1.2
 ---
@@ -23,6 +31,7 @@ Change Log
 
    - Fallback to text for unsupported builder (:issue:`2`)
    - Use inline HTML stylesheet
+
 
 1.1
 ---
