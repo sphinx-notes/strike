@@ -9,26 +9,41 @@
 name = "sphinxnotes-strike"
 description = "An extension that adds strikethrough text support to Sphinx"
 readme = "README.rst"
-license = { file = "BSD-3-Clause" }
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
 authors = [ { name = "Shengyu Zhang" } ]
 maintainers = [ { name = "Shengyu Zhang" } ]
-keywords = ["sphinx", "extension", "documentation"] # TOOD: additional_keywords
+keywords = [
+    "sphinx",
+    "extension",
+    "documentation",
+    "sphinxnotes",
+
+    # CUSTOM KEYWORDS START
+    # CUSTOM KEYWORDS END
+]
 classifiers = [
-    # "Development Status :: 4 - Beta",
+    "Development Status :: 3 - Alpha",
     "Environment :: Plugins",
     "Framework :: Sphinx",
     "Framework :: Sphinx :: Extension",
-    "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Topic :: Documentation",
     "Topic :: Documentation :: Sphinx",
+
+    # CUSTOM CLASSIFIERS START
+    # CUSTOM CLASSIFIERS END
 ]
 
-requires-python = ">=3.8"
+# See ``make pyver`` for more details.
+requires-python = ">=3.12"
 dependencies = [
-    "Sphinx >= 4",
+    "Sphinx >= 7.0",
+
+    # CUSTOM DEPENDENCIES START
+    # CUSTOM DEPENDENCIES END
 ]
 
 dynamic = ["version"] # required by setuptools_scm, see section [build-system]
@@ -38,16 +53,28 @@ dev = [
     "build",
     "twine",
     "cruft",
+    "ruff",
+    "pre-commit",
+    "vermin",
 ]
 test = [
     "pytest",
 ]
 docs = [
     "furo",
-    "sphinxnotes-any",
     "sphinx_design",
     "sphinx_copybutton",
     "sphinxcontrib-gtagjs",
+    "sphinx-sitemap",
+    "sphinxext-opengraph",
+    "sphinx-last-updated-by-git",
+
+    # Dependencies of sphinxnotes projcts.
+    "sphinxnotes-project",
+    "sphinxnotes-comboroles",
+
+    # CUSTOM DOCS DEPENDENCIES START
+    # CUSTOM DOCS DEPENDENCIES END
 ]
 
 [project.urls]
@@ -70,3 +97,5 @@ version_scheme = "no-guess-dev"
 # Find namespace package,
 # check out https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#finding-namespace-packages
 where = ["src"]
+
+# CUSTOM CONFIGURATION

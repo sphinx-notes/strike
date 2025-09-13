@@ -1,0 +1,14 @@
+# This file is generated from sphinx-notes/cookiecutter.
+# You need to consider modifying the TEMPLATE or modifying THIS FILE.
+
+exclude = [
+    "docs/conf.py",
+]
+
+[format]
+quote-style = "single"
+
+[lint]
+ignore = [
+    "E741", # Checks for the use of the characters 'l', 'O', or 'I' as variable names
+]

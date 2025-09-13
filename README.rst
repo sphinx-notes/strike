@@ -5,26 +5,28 @@
 sphinxnotes-strike
 ==================
 
-.. image:: https://img.shields.io/github/actions/workflow/status/sphinx-notes/strike/pages.yml
+.. |docs| image:: https://img.shields.io/github/deployments/sphinx-notes/strike/github-pages
    :target: https://sphinx.silverrainz.me/strike
    :alt: Documentation Status
-
-.. image:: https://img.shields.io/github/license/sphinx-notes/strike
-   :target: https://github.com/sphinx-notes/strike/LICENSE
+.. |license| image:: https://img.shields.io/github/license/sphinx-notes/strike
+   :target: https://github.com/sphinx-notes/strike/blob/master/LICENSE
    :alt: Open Source License
-
-.. image:: https://img.shields.io/pypi/v/sphinxnotes-strike.svg
+.. |pypi| image:: https://img.shields.io/pypi/v/sphinxnotes-strike.svg
    :target: https://pypi.python.org/pypi/sphinxnotes-strike
    :alt: PyPI Package
-
-.. image:: https://img.shields.io/pypi/dm/sphinxnotes-strike
+.. |download| image:: https://img.shields.io/pypi/dm/sphinxnotes-strike
    :target: https://pypi.python.org/pypi/sphinxnotes-strike
    :alt: PyPI Package Downloads
 
+|docs| |license| |pypi| |download|
+
 An extension that adds strikethrough text support to Sphinx.
 
-* Documentation: https://sphinx.silverrainz.me/strike
-* Source: https://github.com/sphinx-notes/strike
-* Changelog: https://sphinx.silverrainz.me/strike/changelog.html
-* Tracker: https://github.com/sphinx-notes/strike/issues
-* Download: https://pypi.org/project/sphinxnotes-strike/#files
+.. INTRODUCTION START 
+   (MUST written in standard reStructuredText, without Sphinx stuff)
+
+.. INTRODUCTION END
+
+Please refer to Documentation_ for more details.
+
+.. _Documentation: https://sphinx.silverrainz.me/strike

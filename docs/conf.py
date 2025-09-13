@@ -7,9 +7,6 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-import os
-import sys
-
 # -- Project information -----------------------------------------------------
 
 project = 'sphinxnotes-strike'
@@ -28,6 +25,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx_design',
     'sphinx_copybutton',
+    'sphinx_last_updated_by_git',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -74,49 +72,6 @@ html_logo = html_favicon = '_static/sphinx-notes.png'
 
 # -- Extensions -------------------------------------------------------------
 
-#  
-extensions.append('sphinxnotes.any')
-from sphinxnotes.any import Schema, Field as F
-#
-version_schema = Schema('version',
-                        name=F(unique=True, referenceable=True, required=True, form=F.Form.LINES),
-                        attrs={'date': F(referenceable=True)},
-                        content=F(form=F.Form.LINES),
-                        description_template=open('_templates/version.rst', 'r').read(),
-                        reference_template='🏷️{{ title }}',
-                        missing_reference_template='🏷️{{ title }}',
-                        ambiguous_reference_template='🏷️{{ title }}')
-confval_schema = Schema('confval',
-                        name=F(unique=True, referenceable=True, required=True, form=F.Form.LINES),
-                        attrs={
-                            'type': F(),
-                            'default': F(),
-                            'choice': F(form=F.Form.WORDS),
-                            'versionadded': F(),
-                            'versionchanged': F(form=F.Form.LINES),
-                        },
-                        content=F(),
-                        description_template=open('_templates/confval.rst', 'r').read(),
-                        reference_template='⚙️{{ title }}',
-                        missing_reference_template='⚙️{{ title }}',
-                        ambiguous_reference_template='⚙️{{ title }}')
-example_schema = Schema('example',
-                        name=F(referenceable=True),
-                        attrs={'style': F()},
-                        content=F(form=F.Form.LINES),
-                        description_template=open('_templates/example.rst', 'r').read(),
-                        reference_template='📝{{ title }}',
-                        missing_reference_template='📝{{ title }}',
-                        ambiguous_reference_template='📝{{ title }}')
-#
-any_schemas = [
-    version_schema,
-    confval_schema,
-    example_schema,
-]
-primary_domain = 'any'
-# 
-
 extensions.append('sphinx.ext.extlinks')
 extlinks = {
     'issue': ('https://github.com/sphinx-notes/strike/issues/%s', '💬%s'),
@@ -127,16 +82,46 @@ extlinks = {
 extensions.append('sphinxcontrib.gtagjs')
 gtagjs_ids = ['G-E4SNX0WZYV']
 
-#  
+extensions.append('sphinx.ext.autodoc')
+autoclass_content = 'init'
+autodoc_typehints = 'description'
+
+extensions.append('sphinx.ext.intersphinx')
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master', None),
+    'jinja': ('https://jinja.palletsprojects.com/en/latest/', None),
+}
+
+extensions.append('sphinx_sitemap')
+sitemap_filename = "sitemap.xml"
+sitemap_url_scheme = "{link}"
+
+extensions.append('sphinxext.opengraph')
+ogp_site_url = html_baseurl
+ogp_site_name = project
+ogp_image = html_baseurl + '/' + html_logo
+
+extensions.append('sphinxnotes.comboroles')
+comboroles_roles = {
+    'parsed_literal': (['literal'], True),
+}
+
+extensions.append('sphinxnotes.project')
+primary_domain = 'any'
+
 # -- Eat your own dog food --------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
+import os
+import sys
 sys.path.insert(0, os.path.abspath('../src/sphinxnotes'))
 extensions.append('strike')
 
 # DOG FOOD CONFIGURATION START
 
 # DOG FOOD CONFIGURATION END
-# 
+
+# CUSTOM CONFIGURATION

@@ -1,16 +1,36 @@
 .. This file is generated from sphinx-notes/cookiecutter.
    You need to consider modifying the TEMPLATE or modifying THIS FILE.
 
-.. include:: ../README.rst
+==================
+sphinxnotes-strike
+==================
+
+.. |docs| image:: https://img.shields.io/github/deployments/sphinx-notes/strike/github-pages?label=docs
+   :target: https://sphinx.silverrainz.me/strike
+   :alt: Documentation Status
+.. |license| image:: https://img.shields.io/github/license/sphinx-notes/strike
+   :target: https://github.com/sphinx-notes/strike/blob/master/LICENSE
+   :alt: Open Source License
+.. |pypi| image:: https://img.shields.io/pypi/v/sphinxnotes-strike.svg
+   :target: https://pypi.python.org/pypi/sphinxnotes-strike
+   :alt: PyPI Package
+.. |download| image:: https://img.shields.io/pypi/dm/sphinxnotes-strike
+   :target: https://pypi.python.org/pypi/sphinxnotes-strike
+   :alt: PyPI Package Downloads
+.. |github| image:: https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white/
+   :target: https://github.com/sphinx-notes/strike
+   :alt: GitHub Repository
+
+|docs| |license| |pypi| |download| |github|
 
 Introduction
 ============
 
-.. ADDITIONAL CONTENT START
+.. INTRODUCTION START
 
 An extension that adds :del:`strikethrough text` support to Sphinx.
 
-.. ADDITIONAL CONTENT END
+.. INTRODUCTION END
 
 Getting Started
 ===============
@@ -20,13 +40,16 @@ Getting Started
    We assume you already have a Sphinx documentation,
    if not, see `Getting Started with Sphinx`_.
 
+
 First, downloading extension from PyPI:
 
 .. code-block:: console
 
    $ pip install sphinxnotes-strike
 
-Then, add the extension name to ``extensions`` configuration item in your conf.py_:
+
+Then, add the extension name to ``extensions`` configuration item in your
+:parsed_literal:`conf.py_`:
 
 .. code-block:: python
 
