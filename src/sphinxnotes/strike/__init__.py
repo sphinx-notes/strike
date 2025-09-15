@@ -16,11 +16,15 @@ from docutils.nodes import Node, system_message, Text
 from docutils.parsers.rst.states import Inliner
 
 from sphinx.application import Sphinx
+from sphinx.builders import Builder
 from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.builders.latex import LaTeXBuilder
 
 from . import meta
 
+
+# List of all builders that support render :class:`strike_node`.
+SUPPORTED_BUILDERS: list[type[Builder]] = [StandaloneHTMLBuilder, LaTeXBuilder]
 
 class strike_node(nodes.Inline, nodes.TextElement):
     pass
@@ -37,7 +41,7 @@ def strike_role(
 ) -> Tuple[List[Node], List[system_message]]:
     env = inliner.document.settings.env  # type: ignore
 
-    if not isinstance(env.app.builder, (StandaloneHTMLBuilder, LaTeXBuilder)):
+    if not isinstance(env.app.builder, tuple(SUPPORTED_BUILDERS)):
         # Builder is not supported, fallback to text.
         return [Text(unescape(text))], []
 
