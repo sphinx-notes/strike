@@ -19,6 +19,15 @@ Change Log
 
    Change log here.
 
+1.3
+---
+
+.. version:: _
+   :date: 2025-09-26
+
+   - Export a ``SUPPORTED_BUILDERS`` list (:issue:`7`)
+   - Add :file:`py.typed` file to ship type hints (:pull:`6`)
+
 1.2
 ---
 

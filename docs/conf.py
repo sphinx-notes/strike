@@ -11,10 +11,10 @@
 
 project = 'sphinxnotes-strike'
 author = 'Shengyu Zhang'
-copyright = "2023, " + author
+copyright = "2025, " + author
 
 # The full version, including alpha/beta/rc tags
-version = release = '1.2-4-g8eb3dc8'
+version = release = '1.3'
 
 # -- General configuration ---------------------------------------------------
 
