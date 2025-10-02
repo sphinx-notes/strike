@@ -19,6 +19,13 @@ Change Log
 
    Change log here.
 
+1.4
+---
+
+.. version:: _
+
+   - Avoid an error which occurred when another extension has already added LaTeX packages.
+
 1.3
 ---
 

@@ -78,7 +78,11 @@ def setup(app: Sphinx):
     """Sphinx extension entrypoint."""
     meta.pre_setup(app)
 
-    app.add_latex_package('ulem', 'normalem')
+    latex_packages = ('ulem', 'normalem')
+    for latex_package in latex_packages:
+        # If the package is already added and we add it again, Sphinx will warn.
+        if not app.has_latex_package(latex_package):
+            app.add_latex_package(latex_package)
 
     app.add_node(
         strike_node,
