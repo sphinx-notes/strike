@@ -23,7 +23,6 @@ Change Log
 ---
 
 .. version:: _
-   :date: 2025-10-01
 
    - Avoid an error which occurred when another extension has already added LaTeX packages.
 
