@@ -81,7 +81,7 @@ def setup(app: Sphinx):
     latex_packages = ('ulem', 'normalem')
     for latex_package in latex_packages:
         # If the package is already added and we add it again, Sphinx will warn.
-        if not app.has_latex_package(latex_package):
+        if not app.registry.has_latex_package(latex_package):
             app.add_latex_package(latex_package)
 
     app.add_node(
