@@ -24,7 +24,8 @@ Change Log
 
 .. version:: _
 
-   - Avoid an error which occurred when another extension has already added LaTeX packages.
+   - Avoid an error which occurred when another extension has already added
+     LaTeX packages (:pull:`10`, :pull:`11`)
 
 1.3
 ---
