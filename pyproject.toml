@@ -53,9 +53,8 @@ dev = [
     "build",
     "twine",
     "cruft",
-    "ruff",
+    "ruff>=0.11.10", # pwndbg#2716
     "pre-commit",
-    "vermin",
 ]
 test = [
     "pytest",

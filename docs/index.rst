@@ -12,7 +12,7 @@ sphinxnotes-strike
    :target: https://github.com/sphinx-notes/strike/blob/master/LICENSE
    :alt: Open Source License
 .. |pypi| image:: https://img.shields.io/pypi/v/sphinxnotes-strike.svg
-   :target: https://pypi.python.org/pypi/sphinxnotes-strike
+   :target: https://pypistats.org/packages/sphinxnotes-strike
    :alt: PyPI Package
 .. |download| image:: https://img.shields.io/pypi/dm/sphinxnotes-strike
    :target: https://pypi.python.org/pypi/sphinxnotes-strike

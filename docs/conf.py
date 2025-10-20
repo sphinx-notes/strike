@@ -120,8 +120,4 @@ import sys
 sys.path.insert(0, os.path.abspath('../src/sphinxnotes'))
 extensions.append('strike')
 
-# DOG FOOD CONFIGURATION START
-
-# DOG FOOD CONFIGURATION END
-
 # CUSTOM CONFIGURATION

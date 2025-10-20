@@ -13,7 +13,7 @@ OPEN  = xdg-open
 docs:
 	$(MAKE) -C docs/
 
-.PHONY:
+.PHONY: view
 view:
 	$(OPEN) docs/_build/html/index.html
 
@@ -60,30 +60,32 @@ upload: dist
 
 # Keep up to date with the latest template.
 # See https://github.com/sphinx-notes/cookiecutter.
-.PHONY: tmpl-update
+.PHONY: tmpl-update tmpl-update-done tmpl-apply-rej
+
 tmpl-update:
 	$(PY) -m cruft update
 
-.PHONY: tmpl-update-done
 tmpl-update-done:
 	$(GIT) commit -m "chore: Update project template to sphinx-notes/cookiecutter@$(shell jq -r '.commit' .cruft.json | head -c8)"
 
-.PHONY: apply-rej
-apply-rej:
+tmpl-apply-rej:
 	@for rej in $$(find . -name '*.rej'); do \
 		echo "applying $$rej..."; \
 		wiggle --replace $${rej%.rej} $$rej; \
 	done
 
-# Detect the minimum Python versions needed to run code.
-pyvermin:
-	vermin --eval-annotations --target=3.12- --versions src/
-
 # Update project version.
-.PHONY: bump-version
+.PHONY: bump-version bump-version-done
+
 bump-version:
 	@echo -n "Please enter the version to bump: "
 	@read version && $(PY) -m cruft update --variables-to-update "{ \"version\" : \"$$version\" }"
+
+bump-version-done:
+	VERSION=$(shell jq -r '.context.cookiecutter.version' .cruft.json); \
+	$(GIT) commit -m "chore: Bump version to $$VERSION"; \
+	$(GIT) tag $$VERSION
+
 
 ################################################################################
 # CUSTOM TARGETS
