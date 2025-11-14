@@ -23,9 +23,12 @@ Change Log
 ---
 
 .. version:: _
+   :date: 2025-11-14
 
-   - Avoid an error which occurred when another extension has already added
+   - fix: Avoid an error which occurred when another extension has already added
      LaTeX packages (:pull:`10`, :pull:`11`)
+   - refactor: Builder that supports strike_node does not need to insert
+     itself into ``SUPPORTED_BUILDERS`` now (:issue:`12`)
 
 1.3
 ---
