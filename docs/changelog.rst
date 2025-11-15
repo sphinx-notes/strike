@@ -19,6 +19,15 @@ Change Log
 
    Change log here.
 
+1.5
+---
+
+.. version:: _
+   :date: 2025-11-15
+
+   - fix: :version:`1.4` breaks linkcheck builder and likely other builders
+     (:issue:`14`)
+
 1.4
 ---
 

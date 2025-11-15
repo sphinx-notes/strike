@@ -9,7 +9,7 @@
       "full_name": "sphinxnotes-strike",
       "author": "Shengyu Zhang",
       "description": "An extension that adds strikethrough text support to Sphinx",
-      "version": "1.4",
+      "version": "1.5",
       "github_owner": "sphinx-notes",
       "github_repo": "strike",
       "pypi_name": "sphinxnotes-strike",
