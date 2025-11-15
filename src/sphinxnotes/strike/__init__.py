@@ -89,7 +89,9 @@ def _is_supported_builder(builder: Builder) -> bool:
         return True  # NOTE: Compatible with version 1.2.
 
     # a dict of builder name -> dict of node name -> visitor and departure functions
-    handlers = builder.app.registry.translation_handlers[builder.name]
+    handlers = builder.app.registry.translation_handlers.get(builder.name)
+    if handlers is None:
+        return False
     return handlers.get(strike_node.__name__) is not None
 
 
