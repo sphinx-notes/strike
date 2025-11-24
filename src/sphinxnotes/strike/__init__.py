@@ -51,7 +51,7 @@ def strike_role(
             f'role {typ} is not supported for builder {builder.name}, fallback to text',
             location=(env.docname, lineno),
             type='strike',
-            subtype='unspported_builder',
+            subtype='unsupported_builder',
         )
         return [Text(unescape(text))], []
 
