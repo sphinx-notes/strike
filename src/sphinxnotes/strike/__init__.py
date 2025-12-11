@@ -12,23 +12,16 @@ from typing import List, Dict, Tuple
 
 from docutils import nodes
 from docutils.utils import unescape
-from docutils.nodes import Node, system_message, Text
+from docutils.nodes import Node, system_message
 from docutils.parsers.rst.states import Inliner
 
 from sphinx.application import Sphinx
-from sphinx.builders import Builder
-from sphinx.builders.html import StandaloneHTMLBuilder
-from sphinx.builders.latex import LaTeXBuilder
 from sphinx.util import logging
 from sphinx.environment import BuildEnvironment
 
 from . import meta
 
 logger = logging.getLogger(__name__)
-
-# NOTE: DEPRECATED since 1.3, DO NOT use it.
-SUPPORTED_BUILDERS: list[type[Builder]] = [StandaloneHTMLBuilder, LaTeXBuilder]
-
 
 class strike_node(nodes.Inline, nodes.TextElement):
     pass
@@ -44,17 +37,6 @@ def strike_role(
     content: List[str] = [],
 ) -> Tuple[List[Node], List[system_message]]:
     env: BuildEnvironment = inliner.document.settings.env  # type: ignore
-    builder = env.app.builder
-
-    if not _is_supported_builder(builder):
-        logger.warning(
-            f'role {typ} is not supported for builder {builder.name}, fallback to text',
-            location=(env.docname, lineno),
-            type='strike',
-            subtype='unsupported_builder',
-        )
-        return [Text(unescape(text))], []
-
     node = strike_node(rawtext, unescape(text))
     node['docname'] = env.docname
     return [node], []
@@ -82,17 +64,6 @@ def latext_visit_strike_node(self, node: strike_node) -> None:
 
 def latext_depart_strike_node(self, node: strike_node) -> None:
     self.body.append('}')
-
-
-def _is_supported_builder(builder: Builder) -> bool:
-    if isinstance(builder, tuple(SUPPORTED_BUILDERS)):
-        return True  # NOTE: Compatible with version 1.2.
-
-    # a dict of builder name -> dict of node name -> visitor and departure functions
-    handlers = builder.app.registry.translation_handlers.get(builder.name)
-    if handlers is None:
-        return False
-    return handlers.get(strike_node.__name__) is not None
 
 
 def setup(app: Sphinx):
