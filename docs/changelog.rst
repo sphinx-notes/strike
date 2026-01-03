@@ -23,9 +23,17 @@ Change Log
 ===
 
 .. version:: 2.0
+   :date: 2026-01-03
 
    - fix: Fix typo in warning subtype for unsupported builder (:pull:`16`)
-   - BREAKING: Drop all logic about supported builder (:pull:`17`)
+   - Drop all logic about supported builder (:pull:`17`)
+
+     .. warning::
+
+        This this a BREAKING changes to builders that support strike role.
+        Please checkout :issue:`12` for more details.
+
+        End users are unaffected.
 
 1.x
 ===
