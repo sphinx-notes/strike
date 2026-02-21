@@ -24,6 +24,7 @@ Change Log
 
 .. version:: 2.0
    :date: 2026-01-03
+   :break:
 
    - fix: Fix typo in warning subtype for unsupported builder (:pull:`16`)
    - Drop all logic about supported builder (:pull:`17`)
