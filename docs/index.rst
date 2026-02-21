@@ -96,6 +96,7 @@ as part of **The Sphinx Notes Project**.
    :caption: The Sphinx Notes Project
 
    Home <https://sphinx.silverrainz.me/>
+   GitHub <https://github.com/sphinx-notes>
    Blog <https://silverrainz.me/blog/category/sphinx.html>
    PyPI <https://pypi.org/search/?q=sphinxnotes>
 

@@ -23,6 +23,7 @@ version = release = '1.5'
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
+    'sphinx.ext.doctest',
     'sphinx_design',
     'sphinx_copybutton',
     'sphinx_last_updated_by_git',
@@ -45,6 +46,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # produce any output in the built files.
 show_authors = True
 
+# Keep warnings as “system message” paragraphs in the rendered documents.
+keep_warnings = True
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -52,12 +56,6 @@ show_authors = True
 #
 html_theme = 'furo'
 
-html_theme_options = {}
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
 html_theme_options = {
     "source_repository": "https://github.com/sphinx-notes/strike/",
     "source_branch": "master",
@@ -69,6 +67,13 @@ html_theme_options = {
 html_baseurl = 'https://sphinx.silverrainz.me/strike'
 
 html_logo = html_favicon = '_static/sphinx-notes.png'
+
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
+html_static_path = ['_static']
+
+html_css_files = ['custom.css']
 
 # -- Extensions -------------------------------------------------------------
 
@@ -87,11 +92,7 @@ autoclass_content = 'init'
 autodoc_typehints = 'description'
 
 extensions.append('sphinx.ext.intersphinx')
-intersphinx_mapping = {
-    'python': ('https://docs.python.org/3', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/master', None),
-    'jinja': ('https://jinja.palletsprojects.com/en/latest/', None),
-}
+intersphinx_mapping = {}
 
 extensions.append('sphinx_sitemap')
 sitemap_filename = "sitemap.xml"

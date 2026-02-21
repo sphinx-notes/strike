@@ -12,5 +12,14 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version-file: 'pyproject.toml'
-    - run: python3 -m pip install .[dev]
+    - run: python3 -m pip install .[test]
     - run: make test
+  doctest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v5
+      with:
+        python-version-file: 'pyproject.toml'
+    - run: python3 -m pip install .[docs]
+    - run: make doctest

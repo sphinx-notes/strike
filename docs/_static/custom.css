@@ -1,0 +1,10 @@
+/* This file is generated from sphinx-notes/cookiecutter.
+ * DO NOT EDIT.
+ */
+
+/* Missing style for nodes.system_message from Alabaster. */
+.system-message {
+    background-color: #fda;
+    padding: 5px;
+    border: 3px solid red;
+}
