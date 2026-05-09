@@ -1,5 +1,5 @@
 # This file is generated from sphinx-notes/cookiecutter.
-# DO NOT EDIT!!!
+# DO NOT EDIT.
 
 ################################################################################
 # Project meta infos.
