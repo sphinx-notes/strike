@@ -1,3 +1,5 @@
+# This file is generated from sphinx-notes/cookiecutter.
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

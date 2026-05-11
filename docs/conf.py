@@ -1,5 +1,4 @@
 # This file is generated from sphinx-notes/cookiecutter.
-# You need to consider modifying the TEMPLATE or modifying THIS FILE.
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -24,6 +23,7 @@ version = release = '1.5'
 extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.doctest',
+    'sphinx.ext.viewcode',
     'sphinx_design',
     'sphinx_copybutton',
     'sphinx_last_updated_by_git',
@@ -90,6 +90,9 @@ gtagjs_ids = ['G-E4SNX0WZYV']
 extensions.append('sphinx.ext.autodoc')
 autoclass_content = 'init'
 autodoc_typehints = 'description'
+autodoc_default_options = {
+    'member-order': 'bysource',
+}
 
 extensions.append('sphinx.ext.intersphinx')
 intersphinx_mapping = {}
@@ -108,6 +111,7 @@ comboroles_roles = {
     'parsed_literal': (['literal'], True),
 }
 
+
 extensions.append('sphinxnotes.project')
 primary_domain = 'any'
 
@@ -118,7 +122,7 @@ primary_domain = 'any'
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../src/sphinxnotes'))
-extensions.append('strike')
+sys.path.insert(0, os.path.abspath('../src/'))
+extensions.append('sphinxnotes.strike')
 
 # CUSTOM CONFIGURATION

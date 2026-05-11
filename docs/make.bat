@@ -1,4 +1,5 @@
-REM This file is generated from sphinx-notes/cookiecutter. DO NOT EDIT.
+REM This file is generated from sphinx-notes/cookiecutter.
+REM DO NOT EDIT.
 
 @ECHO OFF
 

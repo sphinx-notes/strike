@@ -1,5 +1,4 @@
 # This file is generated from sphinx-notes/cookiecutter.
-# You need to consider modifying the TEMPLATE or modifying THIS FILE.
 
 # This file is used to configure your project.
 # Read more about the various options under:
@@ -58,22 +57,6 @@ dev = [
 ]
 test = [
     "pytest",
-]
-docs = [
-    "furo",
-    "sphinx_design",
-    "sphinx_copybutton",
-    "sphinxcontrib-gtagjs",
-    "sphinx-sitemap",
-    "sphinxext-opengraph",
-    "sphinx-last-updated-by-git",
-
-    # Dependencies of sphinxnotes projcts.
-    "sphinxnotes-project",
-    "sphinxnotes-comboroles",
-
-    # CUSTOM DOCS DEPENDENCIES START
-    # CUSTOM DOCS DEPENDENCIES END
 ]
 
 [project.urls]
